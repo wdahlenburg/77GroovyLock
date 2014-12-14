@@ -20,6 +20,11 @@ var UseCityGPS = "false";
 var UseNeighborhood = "false";
 var updateInterval = "20";
 
+/*
+Models are listed as 4,5,6,6+
+*/
+var model = "";
+
 
 
 

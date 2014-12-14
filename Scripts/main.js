@@ -10,7 +10,23 @@ var updateTimer = 0;
 
 var zip;
 
-
+switch(model){
+	case "4":
+		document.getElementById("style").href="Scripts/Style4.css";
+		break;
+	case "5":
+		document.getElementById("style").href="Scripts/Style5.css";
+		break;
+	case "6":
+		document.getElementById("style").href="Scripts/Style6.css";
+		break;
+	case "6+":
+		document.getElementById("style").href="Scripts/Style6+.css";
+		break;	
+	default :
+		document.getElementById("style").href="Scripts/Style4.css";
+		break;
+}
 
 switch (lang) {
 
@@ -156,8 +172,6 @@ if (currentTime.getTime() - updateTimer >= updateWeatherEvery) {
 function init(){
 
 document.getElementById("cityname").innerHTML = "Loading...";
-
-
 
 updateClock();
 
@@ -1273,3 +1287,4 @@ function xml_loaded (event, request, callback) {
 	}
 
 }
+
