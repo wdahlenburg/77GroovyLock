@@ -1,53 +1,48 @@
-<html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="css/clock.css">
-<script src="js/jquery-1.8.3.min.js"></script>  
-<script src="js/clock.js"></script>
-<link rel="stylesheet" type="text/css" id="style">
-<script type="text/javascript" charset="utf-8" src="Config.js"></script>
-<script type="text/javascript" charset="utf-8" src="Scripts/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="Scripts/main.js"></script>
-<script type="text/javascript" charset="utf-8" src="Scripts/location.js"></script>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/clock.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/clock.js"></script>
+    <link rel="stylesheet" type="text/css" id="style">
+    <script type="text/javascript" charset="utf-8" src="Config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="Scripts/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="Scripts/main.js"></script>
+    <script type="text/javascript" charset="utf-8" src="Scripts/location.js"></script>
 
-<style type="text/css">
+    <style type="text/css"> 
 *{-webkit-touch-callout: none; -webkit-user-select: none; /* Disable selection/Copy of UIWebView */}
 </style>
 
-<img src="Images/Overlay.png" style="position:absolute; top:15px; left:-5px; width:425px; z-index:-99;"></img>
+    <img src="Images/Overlay.png" id="overlay"></img>
 </head>
 
 <body onload="init()">
 
+<div class="container" id="clockContainer">
 
- <div class="container" style="margin-left:0px; margin-top:50px;">
+    <div class="clock one" sytle="height:auto; width:auto;">
+        <img src="img/clock1.png" class="bg" id="clock1" z-index="110">
+        <img src="img/clock1-min.png" z-index="110" class="min" width="6px" height="auto">
+        <img src="img/clock1-hour.png" class="hour" z-index="110" width="8px" height="auto">
+        <img src="img/clock1-sec.png" class="sec" z-index="110" width="9px" height="auto"></div>
+</div>
+
+<script>
+jQuery('#effect').on('change', function(){
+    var selected = $(this).find("option:selected");
+    clock.secEffect = selected.val();
+    });
+    var ck = jQuery('.clock');
+    var loading = jQuery('.loading');
                 
-                
-                <div class="clock one">
-                        <img src="img/clock1.png" z-index="10" class="bg" width="190px" height="auto">
-                        <img src="img/clock1-min.png" z-index="110" class="min" width="6px" height="auto">
-            <img src="img/clock1-hour.png" class="hour" z-index="110" width="8px" height="auto">
-                        <img src="img/clock1-sec.png" class="sec" z-index="110" width="9px" height="auto">
-                </div>
-        </div>
+    jQuery('.demo').on('click', function(){
+            $this = $(this);
+            $this.addClass('selected').siblings('.demo').removeClass('selected');
 
+            var selected = $this.data('val');
 
-        <script>
-                jQuery('#effect').on('change', function(){
-                        var selected = $(this).find("option:selected");
-                        
-                        clock.secEffect = selected.val();
-                });
-
-                var ck = jQuery('.clock');
-                var loading = jQuery('.loading');
-                
-                jQuery('.demo').on('click', function(){
-                        $this = $(this);
-                        $this.addClass('selected').siblings('.demo').removeClass('selected');
-
-                        var selected = $this.data('val');
-
-                        ck.removeClass('clock').hide();
+                ck.removeClass('clock').hide();
                         ck = $('.'+selected).addClass('clock').show();
 
                         clock.init();
@@ -56,22 +51,24 @@
 
         </script>
 
-
 <div id="Clock">
-<a id="hour"></a><a id="tiret">:</a><a id="minute"><a id="ampm"></a>
+    <a id="hour"></a>
+    <a id="tiret">:</a>
+    <a id="minute">
+    <a id="ampm"></a>
 </div>
-
 
 <div id="weekday"></div>
 
 <div id="Calendar">
-<a id="month"></a><a id="date"></a>
+        <a id="month"></a>
+        <a id="date"></a>
 </div>
-
 <div id="temp"></div>
 <div id="desc"></div>
 <img id="weatherIcon" src="Images/blank.png"></img>
 
 <div id="cityname"></div>
 
-</body></html>
+</body>
+</html>

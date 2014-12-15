@@ -12,19 +12,20 @@ var zip;
 
 switch(model){
 	case "4":
-		document.getElementById("style").href="Scripts/Style4.css";
+		//The widget fits with the same settings as the 5
+		document.getElementById("style").href="css/Style5.css";
 		break;
 	case "5":
-		document.getElementById("style").href="Scripts/Style5.css";
+		document.getElementById("style").href="css/Style5.css";
 		break;
 	case "6":
-		document.getElementById("style").href="Scripts/Style6.css";
+		document.getElementById("style").href="css/Style6.css";
 		break;
 	case "6+":
-		document.getElementById("style").href="Scripts/Style6+.css";
+		document.getElementById("style").href="css/Style6+.css";
 		break;	
 	default :
-		document.getElementById("style").href="Scripts/Style4.css";
+		document.getElementById("style").href="css/Style6.css";
 		break;
 }
 
